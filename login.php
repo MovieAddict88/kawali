@@ -244,6 +244,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
+        .login-form h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
         .login-form h2 {
             color: #333;
             margin-bottom: 10px;
@@ -330,10 +337,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body class="login-page">
     <div class='login-container'>
         <div class='login-image'>
-            <div class="content">
-                <h1><?php echo htmlspecialchars($site_name); ?></h1>
-                <p><?php echo translate('welcome_back'); ?></p>
-            </div>
         </div>
         <div class='login-form'>
             <div style="margin-bottom: 30px;">
@@ -342,6 +345,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php else: ?>
                     <span class="material-icons" style="font-size: 3rem; color: #4361ee; margin-bottom: 10px;">vpn_lock</span>
                 <?php endif; ?>
+                <h1><?php echo htmlspecialchars($site_name); ?></h1>
                 <h2><?php echo translate('login_title'); ?></h2>
                 <p><?php echo translate('please_fill_credentials'); ?></p>
             </div>
