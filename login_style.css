@@ -1,0 +1,176 @@
+/* Import modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3a56d4;
+  --secondary: #7209b7;
+  --success: #4cc9f0;
+  --danger: #f72585;
+  --warning: #f8961e;
+  --info: #4895ef;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --gray-light: #e9ecef;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f7fb;
+    color: var(--dark);
+    line-height: 1.6;
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden; /* Prevent scrolling on the body */
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1200px; /* Adjust max-width as needed */
+    min-height: 600px;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Ensure content stays within the container */
+}
+
+@keyframes panImage {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.login-image {
+    background: url('assets/background/background.jpg') no-repeat center center;
+    background-size: cover;
+    animation: panImage 20s linear infinite;
+}
+
+.login-form {
+    padding: clamp(20px, 5vw, 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-form h2 {
+    color: var(--primary);
+    margin-bottom: clamp(10px, 2vw, 20px);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.login-form p {
+    color: var(--gray);
+    margin-bottom: clamp(20px, 4vw, 40px);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+/* Gmail-style overrides for MDC Text Field */
+.mdc-text-field--outlined {
+    width: 100%;
+    --mdc-theme-primary: #1a73e8; /* Google Blue */
+    --mdc-text-field-outlined-idle-border-color: #dadce0;
+    --mdc-text-field-outlined-hover-border-color: #d2e3fc;
+    --mdc-text-field-ink-color: #202124;
+    --mdc-floating-label-color: #5f6368;
+}
+
+.mdc-text-field--outlined .mdc-notched-outline__leading,
+.mdc-text-field--outlined .mdc-notched-outline__notch,
+.mdc-text-field--outlined .mdc-notched-outline__trailing {
+    border-radius: 4px;
+}
+
+.mdc-text-field__input {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.mdc-floating-label {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Gmail-style overrides for MDC Button */
+.mdc-button--raised {
+    width: 100%;
+    height: 48px;
+    --mdc-theme-primary: #1a73e8; /* Google Blue */
+    --mdc-theme-on-primary: #fff;
+    --mdc-button-raised-box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+    --mdc-button-hover-raised-box-shadow: 0 1px 3px 1px rgba(60,64,67,0.149), 0 2px 6px 2px rgba(60,64,67,0.149);
+}
+
+.mdc-button__label {
+    font-family: 'Google Sans', 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+}
+
+
+.text-danger {
+    color: var(--danger);
+    font-size: 0.875rem;
+    margin-top: 6px;
+    display: block;
+}
+
+.site-icon {
+    width: clamp(48px, 10vw, 96px);
+    height: clamp(48px, 10vw, 96px);
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 3px solid yellow;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .login-image {
+        display: none; /* Hide the image on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: clamp(15px, 4vw, 40px);
+    }
+}
