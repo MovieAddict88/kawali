@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
             font-family: 'Roboto', sans-serif;
         }
 
@@ -227,7 +227,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         .login-form {
             flex: 1;
-            padding: 40px;
+            padding: clamp(20px, 5vw, 60px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -236,24 +236,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .site-icon {
-            width: 80px;
-            height: 80px;
+            width: clamp(48px, 10vw, 96px);
+            height: clamp(48px, 10vw, 96px);
             border-radius: 50%;
             margin-bottom: 20px;
             object-fit: cover;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
+        .login-form h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+        }
+
         .login-form h2 {
             color: #333;
             margin-bottom: 10px;
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
         }
 
         .login-form > p {
             color: #666;
             margin-bottom: 30px;
-            font-size: 0.95rem;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
         }
 
         form {
@@ -330,10 +337,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body class="login-page">
     <div class='login-container'>
         <div class='login-image'>
-            <div class="content">
-                <h1><?php echo htmlspecialchars($site_name); ?></h1>
-                <p><?php echo translate('welcome_back'); ?></p>
-            </div>
         </div>
         <div class='login-form'>
             <div style="margin-bottom: 30px;">
@@ -342,6 +345,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php else: ?>
                     <span class="material-icons" style="font-size: 3rem; color: #4361ee; margin-bottom: 10px;">vpn_lock</span>
                 <?php endif; ?>
+                <h1><?php echo htmlspecialchars($site_name); ?></h1>
                 <h2><?php echo translate('login_title'); ?></h2>
                 <p><?php echo translate('please_fill_credentials'); ?></p>
             </div>
