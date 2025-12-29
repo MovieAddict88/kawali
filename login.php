@@ -227,7 +227,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         .login-form {
             flex: 1;
-            padding: 40px;
+            padding: clamp(20px, 5vw, 60px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -236,8 +236,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .site-icon {
-            width: 80px;
-            height: 80px;
+            width: clamp(48px, 10vw, 96px);
+            height: clamp(48px, 10vw, 96px);
             border-radius: 50%;
             margin-bottom: 20px;
             object-fit: cover;
@@ -247,20 +247,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         .login-form h1 {
             color: #333;
             margin-bottom: 10px;
-            font-size: 2.2rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             font-weight: 700;
         }
 
         .login-form h2 {
             color: #333;
             margin-bottom: 10px;
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
         }
 
         .login-form > p {
             color: #666;
             margin-bottom: 30px;
-            font-size: 0.95rem;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
         }
 
         form {
