@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(90deg, #00ccff, #eeff00);
+            background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
             font-family: 'Roboto', sans-serif;
         }
 
